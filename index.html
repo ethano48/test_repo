@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Resume</title>
+    <style>
+        /* Base Themes */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #0066cc;
+            --card-bg: #f4f4f9;
+            --border-color: #dddddd;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #4da6ff;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Toggle Button */
+        .theme-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .theme-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Resume Content Styling */
+        h1, h2, h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .job, .education {
+            margin-bottom: 15px;
+        }
+
+        .job-title, .degree {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .company, .school {
+            font-style: italic;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .date {
+            float: right;
+            font-size: 0.9em;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: var(--border-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header with Name and Theme Toggle -->
+        <header>
+            <div>
+                <h1>Alex Morgan</h1>
+                <p>Full Stack Developer | alex.morgan@email.com | (555) 123-4567</p>
+            </div>
+            <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">Dark Mode</button>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Innovative and detail-oriented Full Stack Developer with 3+ years of experience building responsive web applications. Proficient in modern JavaScript frameworks, clean coding practices, and collaborative agile environments.</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <span class="date">2024 - Present</span>
+                <div class="job-title">Software Engineer</div>
+                <div class="company">TechSolutions Corp</div>
+                <p>Developed and maintained scalable web architecture, increasing platform speed by 20%. Collaborated with UI/UX designers to implement responsive interface designs.</p>
+            </div>
+
+            <div class="job">
+                <span class="date">2022 - 2024</span>
+                <div class="job-title">Junior Web Developer</div>
+                <div class="company">WebCraft Studio</div>
+                <p>Assisted in building client websites using HTML, CSS, and React. Optimized existing codebases to improve SEO rankings and cross-browser compatibility.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>JavaScript (ES6+)</li>
+                <li>HTML5 & CSS3</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Git & GitHub</li>
+                <li>SQL & MongoDB</li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <span class="date">Graduated 2022</span>
+                <div class="degree">Bachelor of Science in Computer Science</div>
+                <div class="school">State University</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Theme Switcher JavaScript -->
+    <script>
+        function toggleTheme() {
+            const body = document.documentElement;
+            const button = document.getElementById('themeToggle');
+            
+            // Check current theme attribute
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                button.textContent = 'Dark Mode';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                button.textContent = 'Light Mode';
+            }
+        }
+    </script>
+
+</body>
+</html>
